@@ -35,7 +35,15 @@ private:
     Node *head; 
 };
 
-void mainMenu();
+}
+
+void mainMenu(){
+		cout<<"---MAIN MENU---"<<endl;
+		cout<<"1: Insert: "<<endl;
+		cout<<"2: Pop: "<<endl;
+		cout<<"3: Display: "<<endl;
+		cout<<"4: Exit: "<<endl;
+		cout<<"Enter choice: ";
 int main(){
 int choice, num, burp;
 	LinkedList list;
@@ -49,10 +57,15 @@ int choice, num, burp;
 				   cin>>num;
 				   list.addValue(num);
 				   cout<<"Inserted Value: "<<endl;
+				   burp++;
 				    break;
 				    
 			case 2:	
-					cout<<"Pop Value is: "<<endl;
+					if (burp==0)
+					cout<<" EMPTY! "<<endl;
+					else 
+					cout<< list.popValue()<<endl;
+					burp--;
 					break;
 					
 			case 3: 
@@ -74,14 +87,6 @@ int choice, num, burp;
 }
 }
 return 0;
-}
 
-void mainMenu(){
-		cout<<"---MAIN MENU---"<<endl;
-		cout<<"1: Insert: "<<endl;
-		cout<<"2: Pop: "<<endl;
-		cout<<"3: Display: "<<endl;
-		cout<<"4: Exit: "<<endl;
-		cout<<"Enter choice: ";
 
 }
